@@ -86,7 +86,7 @@ class VLLMModel(LightevalModel):
         self.multichoice_continuations_start_space = config.multichoice_continuations_start_space
 
         self.model_name = _simplify_name(config.pretrained)
-        self.model_sha = ""  # config.get_model_sha()
+        self.model_sha = config.revision
         self.precision = _get_dtype(config.dtype, config=self._config)
 
         self.model_info = ModelInfo(model_name=self.model_name, model_sha=self.model_sha)
